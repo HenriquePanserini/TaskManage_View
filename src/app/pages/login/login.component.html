@@ -1,1 +1,41 @@
-<p>login works!</p>
+<div class="conteudo-login">
+    <form class="conteudo-form" [formGroup]="loginForm" (submit)="submitLogin()">
+
+      <div class="logo-container">
+        <div class="logo-icon">
+            <div class="task-box"></div>
+            <div class="task-box checked"></div>
+            <div class="task-box"></div>
+        </div>
+        <h1 class="logo-text">Ace<span class="logo-text-sufix">Task</span></h1>
+    </div>
+    
+
+      <div>
+        <div>
+          <input class="input-login" placeholder="Email" formControlName="email" type="text" />
+        </div>
+  
+        <!-- Validação para o campo email com alerta -->
+        <div *ngIf="loginForm.get('email')?.errors?.['required'] && loginForm.get('email')?.touched" class="alert alert-danger">
+          <span>Email é obrigatório!</span>
+        </div>
+        <div *ngIf="loginForm.get('email')?.errors?.['email'] && loginForm.get('email')?.touched" class="alert alert-warning">
+          <span>Formato de e-mail inválido</span>
+        </div>
+      </div>
+  
+      <div>
+        <input class="input-login" placeholder="Senha" formControlName="senha" type="password" />
+  
+        <!-- Validação para o campo senha com alerta -->
+        <div *ngIf="loginForm.get('senha')?.errors?.['required'] && loginForm.get('senha')?.touched" class="alert alert-danger">
+          <span>Senha é obrigatória!</span>
+        </div>
+      </div>
+      
+      <div>
+        <button type="submit" class="btn-submit" [disabled]="loginForm.invalid">Login</button>
+      </div>
+    </form>
+  </div>
