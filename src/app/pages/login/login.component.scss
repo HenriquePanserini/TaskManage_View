@@ -1,0 +1,129 @@
+
+/* Container principal do logotipo */
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* Estilos para o ícone do logotipo */
+.logo-icon {
+  display: flex;
+  gap: 4px;
+}
+
+/* Cada "tarefa" representada por uma caixa */
+.task-box {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #4CAF50; /* Cor da borda para o símbolo de tarefa */
+  border-radius: 4px;
+  position: relative;
+}
+
+/* Estilo da tarefa concluída */
+.checked {
+  background-color: #4CAF50; /* Cor verde para indicar uma tarefa concluída */
+}
+
+/* Marca de verificação */
+.checked::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  width: 8px;
+  height: 15px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+/* Texto do logotipo */
+.logo-text {
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #4CAF50;
+}
+
+.logo-text-sufix {
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #79cc7b;
+}
+
+.conteudo-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10%;
+
+    .conteudo-form{
+        border-radius: 10px;
+        background-color: #fff;
+        box-shadow: 0 30px 60px 0 gray;
+        text-align: center;
+        width: 45%;
+        height: 350px;
+        transition: all 0.5s ease-in-out;    
+    }
+
+    .conteudo-form:hover{
+        box-shadow: 0 30px 60px 0 rgb(54,54,54);
+    }
+  
+}
+
+.input-login {
+    background-color: #f6f6f6;
+    border: none;
+    color: #0d0d0d;
+    padding: 15px 0px;
+    text-align: center;
+    font-size: 16px;
+    margin: 5px;
+    width: 90%;
+    border: 2px solid #f6f6f6;
+    transition: all 0.5s ease-in-out;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.alert {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+  }
+  
+  .alert-warning {
+    background-color: #fff3cd;
+    color: #856404;
+    border-color: #ffeeba;
+  }
+
+  .btn-submit {
+    background-color:rgb(59, 150, 59);
+    border: none;
+    color:rgb(255, 255, 255);
+    padding: 15px 0px;
+    margin-top: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px 5px 5px 5px;
+    transition: all 0.3s ease-in-out;
+    width: 60%;
+    cursor: pointer;  
+}
