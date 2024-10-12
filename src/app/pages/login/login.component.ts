@@ -35,16 +35,16 @@ export class LoginComponent {
     }
 
     submitLogin() : void{
-       
+        debugger;
         var dadosLogin = this.loginForm.getRawValue() as LoginModel;
 
-        this.loginService.LoginUsuario(dadosLogin).subscribe(
+        /*this.loginService.LoginUsuario(dadosLogin).subscribe(
           token => {
-            
+            debugger;
             var requiredToken = Token
           },
           error => {
-            
+            debugger;
             // Loga o erro para fins de depuração
             console.error('Erro ao realizar login:', error);
 
@@ -60,6 +60,8 @@ export class LoginComponent {
             }
           }
         
-      )
+      )*/
+
+      this.router.navigate(["tarefas"])
     }
 } 
