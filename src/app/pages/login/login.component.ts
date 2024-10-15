@@ -8,7 +8,7 @@ import { error } from 'console';
 import { Token } from '@angular/compiler';
 
 @Component({
-  selector: 'app-login',
+  selector: 'login',
   standalone: true,
   imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './login.component.html',
