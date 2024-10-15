@@ -1,0 +1,49 @@
+.conteudo-tarefas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .lista-tarefas {
+        border-radius: 10px;
+        background: #fff;
+        box-shadow: 0 5px 6px gray;
+        text-align: center;
+        min-height: 350px;
+        transition: all 0.5s ease-in-out;
+        margin: 60px 16px;
+        overflow: auto;
+
+        .tarefas {
+            border-radius: 7px;
+            background: #fff;
+            box-shadow: 0 1px 5px 0 #047201;
+            text-align: center;
+            margin: 16px;
+            padding: 8px;
+
+            .cabecalho-tarefas {
+                display: inline;
+                
+
+                .data-tarefas {
+                    font-size: 10px;
+                    font-family:  sans-serif;
+                    font-weight: normal;
+                    color: gray;
+                    opacity: 30;
+                    margin-left: 8px;
+                }
+
+                .usuario-tarefas {
+                    font-size: 10px;
+                    font-family: sans-serif;
+                    font-weight: normal;
+                    color: gray;
+                    opacity: 30;
+                    margin-left: 8px;
+                }
+            }
+
+        }
+    }
+}

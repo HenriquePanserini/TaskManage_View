@@ -1,0 +1,128 @@
+.navbar-container{
+    display: flex;
+    height: 70px;
+    background: rgb(193, 221, 190);
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100% ;
+    
+      
+        /* Container principal do logotipo */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-left: 10px;
+        }
+        
+        /* Estilos para o ícone do logotipo */
+        .logo-icon {
+            display: flex;
+            gap: 4px;
+        }
+        
+        /* Cada "tarefa" representada por uma caixa */
+        .task-box {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #4CAF50; /* Cor da borda para o símbolo de tarefa */
+            border-radius: 4px;
+            position: relative;
+        }
+        
+        /* Estilo da tarefa concluída */
+        .checked {
+            background-color: #4CAF50; /* Cor verde para indicar uma tarefa concluída */
+        }
+        
+        /* Marca de verificação */
+        .checked::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 5px;
+            width: 8px;
+            height: 15px;
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            transform: rotate(45deg);
+        }
+        
+        /* Texto do logotipo */
+        .logo-text {
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+        
+        .logo-text-sufix {
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            color: #79cc7b;
+        }
+        
+
+    .grupo-usuario{
+        margin-left: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       
+        .content-list-options {
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+
+            .lista-foto-usuario {
+                margin: 0px;
+                margin-right: 20px;
+                padding: 0px;
+                height: 40px;
+                width: 40px;
+                position: relative;
+                top: 10px;
+
+                .foto-usuario {
+                    height: 80px;
+                    width: 40px;
+                    background: #fff;
+                    border-radius: 100%;
+
+                    img {
+                       
+                    }
+                }
+            }
+
+            .lista-btn-sair{
+                margin: 0px;
+                margin-right: 20px;
+
+                .btn-sair{
+                    border: none;
+                    border-radius: 10px;
+                    background-color: transparent;
+                    height: 40px;
+                    width: 50px;
+                    margin: 8px;
+                    cursor: pointer;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+
+                    i {
+                        font-size: 24px;
+                        color:#4CAF50
+                    }
+
+                }
+            }
+
+        } 
+    }
+}

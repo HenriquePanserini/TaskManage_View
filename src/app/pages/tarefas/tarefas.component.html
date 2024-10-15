@@ -1,1 +1,27 @@
-<p>tarefas works!</p>
+<navbar></navbar>
+
+<div class="conteudo-tarefas">
+    <div class="lista-tarefas">
+
+        <ng-container *ngFor="let item of listaTarefas"  >
+            <div class="tarefas">
+                <div class="cabecalh-tarefas">
+                    <div class="data-tarefas">
+                        <span> Date: 14/10/2024</span>
+                    </div>
+                    <div class="usuario-tarefas">
+                        <span> User: Henrique Panserini</span>
+                    </div>
+                </div>
+
+             <div class="texto-tarefas">
+                <span>
+                    Esta é a descrição da tarefa que tem que ser realizada
+                    vindo da comunicação com a API
+                </span>
+             </div>
+            </div>
+        </ng-container>
+    </div>
+
+</div>

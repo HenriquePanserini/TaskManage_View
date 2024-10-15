@@ -1,1 +1,24 @@
-<p>navbar works!</p>
+<nav class="navbar-container">
+    <div class="logo">
+        <div class="logo-container">
+            <div class="logo-icon">
+                <div class="task-box"></div>
+                <div class="task-box checked"></div>
+                <div class="task-box"></div>
+            </div>
+            <h1 class="logo-text">Ace<span class="logo-text-sufix">Task</span></h1>
+        </div>
+    </div>
+    <div class="grupo-usuario">
+        <ul class="content-list-options">
+            <li class="lista-foto-usuario">
+                <img src="" class="foto-usuario" alt="foto-usuario">
+            </li>
+            <li class="lista-btn-sair" (click)="exit()">
+                <button class="btn-sair">
+                    <i class="fas fa-sign-out-alt"></i> 
+                </button>
+            </li>
+        </ul>
+    </div>
+</nav>
