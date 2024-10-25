@@ -12,7 +12,7 @@ export class LoginService {
   constructor(private httpCliente : HttpClient) { }
 
   LoginUsuario(objeto: any) {
-      return this.httpCliente.post<any>(`${this.baseUrl}/AdicionaUsuarioIdentity/`, objeto);
+      return this.httpCliente.post<any>(`${this.baseUrl}/TokenKey/`, objeto);
     
   }
 

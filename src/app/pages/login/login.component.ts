@@ -4,8 +4,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { LoginService } from '../../service/login.service';
-import { error } from 'console';
-import { Token } from '@angular/compiler';
+import { AutenticacaoService } from '../../service/autenticacao/autenticacao.service';
 
 @Component({
   selector: 'login',
@@ -20,7 +19,8 @@ export class LoginComponent {
 
     constructor(private formBuilder : FormBuilder,
                 private router : Router,
-                public loginService : LoginService
+                public loginService : LoginService,
+                private autenticacaoService : AutenticacaoService
     ) {
 
     }
@@ -35,19 +35,20 @@ export class LoginComponent {
     }
 
     submitLogin() : void{
-        debugger;
+        
         var dadosLogin = this.loginForm.getRawValue() as LoginModel;
 
-        /*this.loginService.LoginUsuario(dadosLogin).subscribe(
+        this.loginService.LoginUsuario(dadosLogin).subscribe(
           token => {
             debugger;
-            var requiredToken = Token
+            this.autenticacaoService.DefineToken(token)
+            this.router.navigate(["/tarefas"]);
           },
           error => {
-            debugger;
+            
             // Loga o erro para fins de depuração
             console.error('Erro ao realizar login:', error);
-
+            
             // Verifica o status do erro e exibe uma mensagem para o usuário
             if (error.status === 400) {
                 alert('Login inválido. Verifique seu email e senha.');
@@ -60,8 +61,7 @@ export class LoginComponent {
             }
           }
         
-      )*/
+      )
 
-      this.router.navigate(["tarefas"])
     }
 } 

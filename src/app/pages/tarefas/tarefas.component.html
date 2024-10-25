@@ -3,21 +3,20 @@
 <div class="conteudo-tarefas">
     <div class="lista-tarefas">
 
-        <ng-container *ngFor="let item of listaTarefas"  >
+        <ng-container *ngFor="let item of tarefas"  >
             <div class="tarefas">
-                <div class="cabecalh-tarefas">
+                <div class="cabecalho-tarefas">
                     <div class="data-tarefas">
-                        <span> Date: 14/10/2024</span>
+                        <span> Date: {{item.dataCriacao}}</span>
                     </div>
-                    <div class="usuario-tarefas">
-                        <span> User: Henrique Panserini</span>
+                    <div class="titulo-tarefas">
+                        <span> Titulo: {{item.titulo}}</span>
                     </div>
                 </div>
 
              <div class="texto-tarefas">
                 <span>
-                    Esta é a descrição da tarefa que tem que ser realizada
-                    vindo da comunicação com a API
+                    {{item.descricao}}
                 </span>
              </div>
             </div>

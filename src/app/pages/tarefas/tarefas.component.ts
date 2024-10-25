@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { CommonModule } from '@angular/common';
+import { TarefasService } from '../../service/tarefas.service';
+import { Router } from '@angular/router';
+import { Tarefa } from '../../model/tarefas.model';
 
 @Component({
   selector: 'tarefas',
@@ -11,18 +14,45 @@ import { CommonModule } from '@angular/common';
 })
 export class TarefasComponent implements OnInit{
 
-  constructor() {
+
+  public tarefas! : any;
+
+  constructor(private tarefasService : TarefasService,
+              public router : Router
+  ) {
 
   }
 
-  listaTarefas! : Array<number>;
-
   ngOnInit() : void {
-    var lista = new Array<number>();
-    for (let index = 0; index < 12; index++){
-      lista.push(index);
-    }
+    this.ListarTarefas();
+  }
 
-    this.listaTarefas = lista;
+  ListarTarefas(){
+     this.tarefasService.listarTarefas()
+        .subscribe(
+        tarefas  => {
+           
+            this.tarefas = tarefas
+        },
+        error => {
+
+          // Loga o erro para fins de depuração
+          console.error('Erro ao realizar login:', error);
+            
+          // Verifica o status do erro e exibe uma mensagem para o usuário
+          if (error.status === 400) {
+              alert('Login inválido. Verifique seu email e senha.');
+          } else if (error.status === 401) {
+              alert('Acesso não autorizado. Verifique suas credenciais.');
+          } else if (error.status === 500) {
+              alert('Erro interno do servidor. Tente novamente mais tarde.');
+          } else {
+              alert('Ocorreu um erro desconhecido. Por favor, tente novamente.');
+          }
+
+          this.router.navigate(['/login']);
+            
+        }
+      ) 
   }
 }

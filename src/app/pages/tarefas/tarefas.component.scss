@@ -9,6 +9,7 @@
         box-shadow: 0 5px 6px gray;
         text-align: center;
         min-height: 350px;
+        width: 450px;
         transition: all 0.5s ease-in-out;
         margin: 60px 16px;
         overflow: auto;
@@ -34,7 +35,7 @@
                     margin-left: 8px;
                 }
 
-                .usuario-tarefas {
+                .titulo-tarefas {
                     font-size: 10px;
                     font-family: sans-serif;
                     font-weight: normal;

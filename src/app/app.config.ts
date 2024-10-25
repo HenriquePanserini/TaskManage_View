@@ -3,11 +3,10 @@ import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
-import { HTTP_INTERCEPTORS, provideHttpClient } from '@angular/common/http';
-
+import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { Interceptor } from './interceptor/interceptor';
 
-const sericeAutentica = [Interceptor];
+const serviceAutentica = [Interceptor];
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -15,7 +14,12 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes), 
     provideClientHydration(), 
     provideHttpClient(),
-    sericeAutentica,
-    {provide : HTTP_INTERCEPTORS, useClass:Interceptor, multi: true}
-  ]
+    serviceAutentica,
+    provideHttpClient(
+        // DI-based interceptors must be explicitly enabled.
+        withInterceptorsFromDi(),
+      ),
+      {provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true},
+    
+    ] 
 };

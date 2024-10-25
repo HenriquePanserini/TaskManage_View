@@ -14,7 +14,7 @@ export class AutenticacaoService {
   }
 
   public ObterToken(){
-    sessionStorage.getItem('token');
+    return sessionStorage.getItem('token');
   }
 
   public LimparToken(){
